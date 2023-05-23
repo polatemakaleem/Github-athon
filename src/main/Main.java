@@ -1,10 +1,11 @@
 package main;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Main {
 
 	public static void main(String[] args) {
-		HashMap<int, Animal> animals = new HashMap<>();
+		
+		ArrayList<Animal> animals = new ArrayList<>();
 		
 		animals.add(new Manatee("Bob", 1));
 		
