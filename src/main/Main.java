@@ -12,6 +12,7 @@ public class Main {
 		System.out.println("Class Manatee: " + (animals.get(0) instanceof Manatee));
 		System.out.println("Class Animal: " + (animals.get(0) instanceof Animal));
 		System.out.println(animals.toString());
+		//THIS IS AN EDIT
 	}
 
 }
