@@ -11,6 +11,8 @@ public class Main {
 		
 		System.out.println(animals.get(0) instanceof Manatee);
 		System.out.println(animals.get(0) instanceof Animal);
+
+		System.out.println("pofdsfo")
 	}
 
 }
