@@ -1,32 +1,38 @@
 package main;
 
-import java.util.ArrayList;
+import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 public class Aquarium {
-	private ArrayList<Animal> animals = new ArrayList<>();
+	private HashMap<Integer, Animal> animals = new HashMap<>(); // O(1) time complexity
 	
 	public Aquarium() {
 		
 	}
 	
-	public void addAnimal(Animal a) {
-		animals.add(a);
+	public void addAnimal(Animal a, int id) {
+		animals.put(id, a);
 	}
 	
-	public Animal getAnimal(int index) {
-		return animals.get(index);
+	public Animal getAnimal(int id) {
+		return animals.get(id);
 	}
 	
 	public boolean idExists(int id) {
-		for(Animal a : animals) {
-			if(id == a.getId())
-				return true;
-		}
-		return false;
+		return animals.containsKey(id);
 	}
 	
 	public void printAnimals() {
-		for(Animal a : animals)
-			System.out.println(a.toString());
+		System.out.println("\n\n\t\t\tALL ANIMALS:\n\t{\n");
+		for(Entry<Integer, Animal> a : getSortedMap().entrySet()) //iterate over every entry in map
+			System.out.println(a.getValue().toString() + ": " + a.getKey());
+		System.out.println("\n\t}");
 	}
+	
+	public TreeMap<Integer, Animal> getSortedMap() { //can change if botero wants us to sort manually, although itll be a lot more complicated
+		return new TreeMap<Integer, Animal>(animals); //clones map into treemap (sorts automagically)
+	}
+	
+	
 }
