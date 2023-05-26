@@ -1,12 +1,11 @@
 package main;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Random;
+
 public class Main {
 
 	public static int getInt(String question, Scanner scanner) {
 		while(true) {
-			System.out.println(question);
+			System.out.print(question);
 			try {
 				return scanner.nextInt();
 			} catch(Exception e) {
@@ -16,9 +15,8 @@ public class Main {
 	}
 	
 	public static int generateId(Aquarium aq) {
-		Random random = new Random();
 		while(true) {
-			int id = random.nextInt();
+			int id = (int) (Math.random() * 9999) + 1; //random number 1-9999
 			if(!aq.idExists(id))
 				return id;
 		}
@@ -28,20 +26,22 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		Aquarium aquarium = new Aquarium();
 		while(true) {
-			System.out.println("\n\t\tAQUARIUM\n\n\t1. Add Animal\n\t2. Print Animal Data");
-			int option = getInt("Enter option: ", scanner);
+			System.out.println("\n\t\tAQUARIUM\n\n\t1. Add Animal\n\t2. Print Animal Data\n\t3. Exit");
+			int option = getInt("\nEnter option: ", scanner);
 			
 			switch(option) {
 				case 1 : {
-					System.out.println("\nEnter name of animal: ");
-					int id = generateId(aquarium);
-					System.out.println("Id: " + id);
-					aquarium.addAnimal(new Animal(scanner.next(), id));
+					System.out.print("\nEnter name of animal: ");
+					aquarium.addAnimal(new Animal(scanner.next()), generateId(aquarium));
 					break;
 				}
 				case 2 : {
 					aquarium.printAnimals();
 					break;
+				}
+				case 3 : {
+					System.out.println("\n\n\tExitting...\n\n");
+					return;
 				}
 				default : {
 					System.out.println("ha gayy");
