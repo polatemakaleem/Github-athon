@@ -7,16 +7,16 @@ import java.util.TreeMap;
 public class Aquarium {
 	private HashMap<Integer, Animal> animals = new HashMap<>(); // O(1) time complexity
 	
-	public Aquarium() {
-		
-	}
-	
 	public void addAnimal(Animal a, int id) {
 		animals.put(id, a);
 	}
 	
 	public Animal getAnimal(int id) {
 		return animals.get(id);
+	}
+	
+	public Animal removeAnimal(int id) {
+		return animals.remove(id);
 	}
 	
 	public boolean idExists(int id) {
