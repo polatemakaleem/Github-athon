@@ -30,7 +30,7 @@ public class Aquarium {
 		System.out.println("\n\t}");
 	}
 	
-	public TreeMap<Integer, Animal> getSortedMap() { //can change if botero wants us to sort manually, although itll be a lot more complicated
+	public TreeMap<Integer, Animal> getSortedMap() {
 		return new TreeMap<Integer, Animal>(animals); //clones map into treemap (sorts automagically)
 	}
 	

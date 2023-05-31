@@ -6,10 +6,8 @@ public class Manatee extends Animal {
 		super(name); //invokes Animal constructor
 	}
 	
-	
-	public String getSciName() {
-		return "Trichechus manatus";
+	public double getCost() {
+		return 199.95;
 	}
-	
 	
 }
