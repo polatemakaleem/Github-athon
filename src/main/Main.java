@@ -37,7 +37,7 @@ public class Main {
 				return new Fish(name);
 			}
 			case 4 : {
-				return new Lobster(name);
+				return new Crab(name);
 			}
 			case 5 : {
 				return new Stingray(name);
