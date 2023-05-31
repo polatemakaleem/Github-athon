@@ -30,7 +30,18 @@ public class Main {
 			case 1 : {
 				return new Manatee(name);
 			}
-			
+			case 2: {
+				return new Otter(name);
+			}
+			case 3 : {
+				return new Fish(name);
+			}
+			case 4 : {
+				return new Lobster(name);
+			}
+			case 5 : {
+				return new Stingray(name);
+			}
 			default : {
 				return null;
 			}
