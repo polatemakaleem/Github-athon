@@ -2,8 +2,8 @@ package main;
 
 public class Manatee extends Animal {
 
-	public Manatee(String name, int id) {
-		super(name, id); //invokes Animal constructor
+	public Manatee(String name) {
+		super(name); //invokes Animal constructor
 	}
 	
 	
