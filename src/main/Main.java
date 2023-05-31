@@ -1,5 +1,6 @@
 package main;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -30,7 +31,7 @@ public class Main {
 			case 1 : {
 				return new Manatee(name);
 			}
-			
+	
 			default : {
 				return null;
 			}
@@ -39,9 +40,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		ArrayList<Animal> shoppingList = new ArrayList<>();
 		Aquarium aquarium = new Aquarium();
 		while(true) {
-			System.out.println("\n\t\tAQUARIUM\n\n\t1. Add Animal\n\t2. Remove Animal\n\t3. Print Animal Data");
+			System.out.println("\n\t\tAQUARIUM\n\n\t1. Add Animal\n\t2. Buy Animal\n\t3. Print Animal Data\n\t4. Exit");
 			int option = getInt("\nEnter option: ", scanner);
 			
 			switch(option) {
@@ -60,14 +62,24 @@ public class Main {
 				}
 				case 2 : {
 					aquarium.printAnimals();
-					int id = getInt("\n\tEnter ID of animal to remove: ", scanner);
-					Animal animal = aquarium.removeAnimal(id);
-					if(animal != null) System.out.println("\n\n\t\t\tRemoved: " + animal.getName());
+					int id = getInt("\n\tEnter ID of animal to buy: ", scanner);
+					if(!aquarium.idExists(id)) {System.out.println("\n\n\tError: ID not found.");break;}
+					Animal animal = aquarium.getAnimal(id);
+					shoppingList.add(animal);
+					System.out.println("Bought animal: " + aquarium.removeAnimal(id).getName());
 					break;
 				}
 				case 3 : {
 					aquarium.printAnimals();
 					break;
+				}
+				
+				case 4 : {
+					double cost = 0;
+					for(Animal a : shoppingList)
+						cost += ((Manatee)a).getCost(); //no idea if this works properly.
+					System.out.println("\n\tTotal cost of all animals: " + cost);
+					return;
 				}
 				default : {
 					System.out.println("\nPlease enter a number in range.");
