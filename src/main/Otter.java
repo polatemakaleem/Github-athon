@@ -1,8 +1,9 @@
 package main;
 
 public class Otter extends Animal {
+	private static final double cost = 150.0;
 	public Otter(String name) {
-		super(name); //invokes Animal constructor
+		super(name, cost); //invokes Animal constructor
 	}
 	
 	
@@ -10,4 +11,7 @@ public class Otter extends Animal {
 		return "Lutrinae";
 	}
 	
+	public double getCost() {
+		return cost;
+	}
 }

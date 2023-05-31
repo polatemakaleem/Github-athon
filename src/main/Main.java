@@ -41,7 +41,7 @@ public class Main {
 				return new Crab(name);
 			}
 			case 5 : {
-				return new Stingray(name);
+				return new Stringray(name);
 			}
 			default : {
 				return null;
@@ -61,7 +61,7 @@ public class Main {
 				case 1 : {
 					
 					while(true) {
-						System.out.println("\n\n\t\t\t\tANIMALS:\n\n\t1. Manatee");
+						System.out.println("\n\n\t\t\t\tANIMALS:\n\n\t1. Manatee ($199.95)\n\t2. Otter ($150)\n\t3. Fish ($50)\n\t4. Crab ($100)\n\t5. Stingray ($350)");
 						int choice = getInt("\nEnter animal species: ", scanner);
 						Animal animal = animalChoice(choice, scanner);
 						if(animal == null) { System.out.println("\n\t\tPlease enter a valid animal species."); continue; }
@@ -87,8 +87,11 @@ public class Main {
 				
 				case 4 : {
 					double cost = 0;
-					for(Animal a : shoppingList)
-						cost += ((Manatee)a).getCost(); //no idea if this works properly.
+					for(Animal a : shoppingList) {
+						System.out.println("\n\tName: " + a.getName() + "\n\tSpecies: " + a.getClass().getSimpleName() + "\n\tCost: " + a.getCost());
+						cost += a.getCost();
+						System.out.println("");
+					}
 					System.out.println("\n\tTotal cost of all animals: " + cost);
 					return;
 				}
