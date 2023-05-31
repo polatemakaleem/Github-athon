@@ -1,6 +1,4 @@
-# Github-athon
-
-THE AQUARIUM
+# The Aquarium
 													
 Welcome to the aquarium! We have a bunch of animals to name and buy. To make your own animal, select 'Add Animal', select 
 its species, and then name it! To actually buy the animal, select 'Buy Animal' and type the ID of whatever animal you want
