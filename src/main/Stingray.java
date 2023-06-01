@@ -1,8 +1,8 @@
 package main;
 
-public class Stringray extends Animal {
+public class Stingray extends Animal {
 	private static final double cost = 350.0;
-	public Stringray(String name) {
+	public Stingray(String name) {
 		super(name, cost); //invokes Animal constructor
 	}
 	
